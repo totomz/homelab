@@ -1,0 +1,4 @@
+Adafruit-DHT==1.4.0
+boto3==1.16.7
+statsd==3.3.0
+python-dotenv~=0.14.0

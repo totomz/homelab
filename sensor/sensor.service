@@ -1,0 +1,13 @@
+[Unit]
+Description=Collect temperature and humidity
+
+[Service]
+Type=simple
+# Disable Python's buffering of STDOUT and STDERR, so that output from the service shows up immediately in systemd's logs
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /home/totomz/homelab/sensor/humidity.py
+Restart=on-failure
+User=root
+
+[Install]
+WantedBy=default.target
