@@ -105,7 +105,7 @@ while True:
         metricset = ipmi = collect_ipmi(hostname=host[0], ip=host[1])
 
         for k in metricset:
-            statsd.gauge(f"host.{host}.{k}", metricset[k])
+            statsd.gauge(f"host.{host[0]}.{k}", metricset[k])
 
     end = timer()
     print("IPMI: {}".format(end - start))
