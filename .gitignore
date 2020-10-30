@@ -2,3 +2,5 @@
 **/*.pyc
 .env
 .idea
+.terraform
+**/*.tfstate
