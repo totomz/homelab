@@ -20,7 +20,7 @@ resource "vsphere_virtual_machine" "vm" {
   name = random_pet.name[count.index].id
   folder = "test-ovs"
 
-  memory = 4096
+  memory = 8192
   num_cpus = 4
 
   resource_pool_id = data.vsphere_compute_cluster.vsan.resource_pool_id
