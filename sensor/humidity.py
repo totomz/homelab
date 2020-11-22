@@ -47,7 +47,7 @@ def str2float(string, default=0.0):
 
 def collect_sensor():
     log = multiprocessing.get_logger()
-    log.info("  --> Collecting temperature and humifity")
+    log.info("  --> Collecting temperature and humidity")
     global q
     lock = sensorlock.acquire(blocking=False)
     if lock is False:
@@ -236,8 +236,8 @@ if __name__ == '__main__':
         log.info("# waking up workers")
 
         for func in [
-            # collect_vgpu,
-            # collect_ipmi,
+            collect_vgpu,
+            collect_ipmi,
             collect_sensor
         ]:
             worker = Thread(target=func)
